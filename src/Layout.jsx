@@ -32,7 +32,7 @@ const Layout = () => {
       </header>
 
       {/* 🔹 Main Content */}
-      <main className="pt-[8rem] pb-[5rem] min-h-screen px-[4rem]">
+      <main className="pt-[8rem] pb-[5rem] min-h-screen  ">
         <Outlet />
       </main>
 

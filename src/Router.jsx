@@ -1,6 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "./Layout";
-// import Home from "./pages/home/Home";
+import Home from "./pages/home/Home";
+import CategoriesPage from "./pages/Categories/CategoriesPage";
+import AllShops from "./pages/Shop/AllShops";
+import ShopDetails from "./pages/Shop/ShopDetails";
+import AllProductsPage from "./pages/Products/AllProductsPage";
+import PopulerProductsPage from "./pages/populer/mostpopuler";
+import BestDeals from "./pages/BestDeals/BestDeals";
+import ContactUs from "./pages/Contact/ContactUs";
 // import Therapy from "./pages/therapy/Therapy";
 // import All_therapists from "./pages/therapists/All_therapists";
 // import WellBeing from "./pages/wellbeing/WellBeing";
@@ -23,10 +30,38 @@ export const Router = createBrowserRouter([
         path: "/",
         element: <Layout />,
         children: [
-            // {
-            //     path: "/",
-            //     element: <Home />
-            // },
+            {
+                path: "/",
+                element: <Home />
+            },
+            {
+                path: "/categories",
+                element: <CategoriesPage />
+            },
+            {
+                path: "/all-shops",
+                element: <AllShops />
+            },
+            {
+                path: "/PopulerProducts",
+                element: <PopulerProductsPage />
+            },
+            {
+                path: "/bestdeals",
+                element: <BestDeals />
+            },
+            {
+                path: "/contactus",
+                element: <ContactUs />
+            },
+            {
+                path: "/allproducts",
+                element: <AllProductsPage />
+            },
+            {
+                path: "//shop/:id",
+                element: <ShopDetails  />
+            },
             // {
             //     path: "/profile",
             //     element:<ProtectedRoutes> <Profile /></ProtectedRoutes>

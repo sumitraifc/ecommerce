@@ -153,7 +153,7 @@ const Header = ({ isScrolled }) => {
   <div className="relative flex items-center border-r">
     <button
       onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-      className="flex items-center gap-1 font-semibold pr-2"
+      className="flex items-center gap-1 font-semibold pr-2 md:pr-4 lg:pr-14"
     >
       <img
         src={fourdot}
