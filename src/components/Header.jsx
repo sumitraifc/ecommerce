@@ -19,11 +19,14 @@ import profile from "/profile.svg";
 import { Phone, User } from "lucide-react";
 import LoginModal from "../reusable_components/LoginModal";
 import { BiMobileLandscape } from "react-icons/bi";
+import { NavLink } from "react-router-dom";
+import CartSidebar from "../reusable_components/CartSidebar";
 
 const Header = ({ isScrolled }) => {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAppOpen , setIsAppOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
     const [isLoginOpen, setIsLoginOpen] = useState(false);
   const categories = [
@@ -35,15 +38,16 @@ const Header = ({ isScrolled }) => {
     "Toys & Games",
   ];
 
-  const navLinks = [
-    "Home",
-    "Products",
-    "Shops",
-    "Most Popular",
-    "Best Deal",
-    "Contact",
-    "Blogs",
-  ];
+const navLinks = [
+  { name: "Home", path: "/" },
+  { name: "Products", path: "/allproducts" },
+  { name: "Shops", path: "/all-shops" },
+  { name: "Most Popular", path: "/PopulerProducts" },
+  { name: "Best Deal", path: "/bestdeals" },
+  { name: "Contact", path: "/contactus" },
+  { name: "Blogs", path: "/blogs" }, // or /blogs if you have separate
+];
+
 
   return (
     <header
@@ -99,8 +103,8 @@ const Header = ({ isScrolled }) => {
           </div>
 
           {/* Cart */}
-          <div className="relative cursor-pointer">
-            {/* <FaShoppingCart /> */}
+          {/* <div className="relative cursor-pointer">
+            
              <img
             src={bag}
             alt="heart menu icon"
@@ -109,7 +113,29 @@ const Header = ({ isScrolled }) => {
             <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
               0
             </span>
-          </div>
+          </div> */}
+           <div>
+      {/* Your existing cart icon - replace your current cart div with this */}
+      <div 
+        className="relative cursor-pointer"
+        onClick={() => setIsCartOpen(true)}
+      >
+        <img
+          src={bag}
+          alt="cart icon"
+          className="w-6 h-6"
+        />
+        <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1">
+          0
+        </span>
+      </div>
+
+      {/* Cart Sidebar Component */}
+      <CartSidebar 
+        isCartOpen={isCartOpen} 
+        setIsCartOpen={setIsCartOpen} 
+      />
+    </div>
 
           {/* Login
           <div className="hidden md:flex items-center gap-1 cursor-pointer">
@@ -182,13 +208,19 @@ const Header = ({ isScrolled }) => {
 <ul className="hidden md:inline-flex justify-start items-center gap-2.5 lg:gap-3 xl:gap-5 2xl:gap-6 grow overflow-x-auto">
   {navLinks.map((link, i) => (
     <li key={i} className="flex items-center gap-2">
-      <span
-        className={`cursor-pointer hover:text-color1 h-9 py-2  border-transparent text-sm lg:text-base font-normal text-slate-600 ${
-          link === "Home" ? "border-b-2 border-color1 text-color1" : ""
-        }`}
+      <NavLink
+        to={link.path}
+        className={({ isActive }) =>
+          `cursor-pointer h-9 py-2  text-sm lg:text-base font-normal ${
+            isActive
+              ? "border-b-2 border-color1 text-color1"
+              : "text-slate-600 hover:text-color1"
+          }`
+        }
       >
-        {link}
-      </span>
+        {link.name}
+      </NavLink>
+
       {/* Divider */}
       {i !== navLinks.length - 1 && (
         <span className="w-[0px] h-4 border border-slate-200"></span>
@@ -272,11 +304,27 @@ const Header = ({ isScrolled }) => {
 
           {/* Links */}
           <ul className="flex flex-col gap-3">
-            {navLinks.map((link, i) => (
-              <li key={i} className="cursor-pointer hover:text-pink-700">
-                {link}
-              </li>
-            ))}
+           {navLinks.map((link, i) => (
+    <li key={i} className="flex items-center gap-2">
+      <NavLink
+        to={link.path}
+        className={({ isActive }) =>
+          `cursor-pointer h-9 py-2  text-sm lg:text-base font-normal ${
+            isActive
+              ? "border-b-2 border-color1 text-color1"
+              : "text-slate-600 hover:text-color1"
+          }`
+        }
+      >
+        {link.name}
+      </NavLink>
+
+      {/* Divider */}
+      {i !== navLinks.length - 1 && (
+        <span className="w-[0px] h-4 border border-slate-200"></span>
+      )}
+    </li>
+  ))}
           </ul>
 
         </div>

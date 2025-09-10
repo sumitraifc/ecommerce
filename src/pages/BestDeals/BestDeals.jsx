@@ -48,7 +48,7 @@ const BestDeals= () => {
 
       {/* Product Grid */}
       {/* <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[4rem] pt-8"> */}
-      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-6 px-[4rem] items-start pt-6">
+      <div className="grid grid-cols-2 xs:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[1rem] pt-8">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
@@ -65,15 +65,38 @@ const BestDeals= () => {
   </p>
 
   {/* Right: Pagination Controls */}
- <div className="flex items-center gap-2">
-  <button className="px-5 py-3 border rounded-md text-sm hover:bg-gray-100">&lt;</button>
-  <button className="px-5 py-3 border rounded-md text-sm bg-color3 text-white hover:bg-red-200">1</button>
-  <button className="px-5 py-3 border rounded-md text-sm hover:bg-gray-100">2</button>
-  <button className="px-5 py-3 border rounded-md text-sm hover:bg-gray-100">3</button>
-  <span className="px-3 py-3 text-gray-500">...</span>
-  <button className="px-5 py-3 border rounded-md text-sm hover:bg-gray-100">10</button>
-  <button className="px-5 py-3 border rounded-md text-sm hover:bg-gray-100">&gt;</button>
+{/* Right: Pagination Controls */}
+<div className="flex items-center justify-center flex-wrap gap-2 mt-6">
+  {/* Prev */}
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm hover:bg-gray-100">
+    &lt;
+  </button>
+
+  {/* Pages */}
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm bg-color3 text-white hover:bg-red-200">
+    1
+  </button>
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm hover:bg-gray-100">
+    2
+  </button>
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm hover:bg-gray-100">
+    3
+  </button>
+
+  {/* Dots */}
+  <span className="px-2 sm:px-3 py-2 text-gray-500">...</span>
+
+  {/* Last Page */}
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm hover:bg-gray-100">
+    10
+  </button>
+
+  {/* Next */}
+  <button className="px-3 sm:px-4 py-2 border rounded-md text-xs sm:text-sm hover:bg-gray-100">
+    &gt;
+  </button>
 </div>
+
 
 </div>
 

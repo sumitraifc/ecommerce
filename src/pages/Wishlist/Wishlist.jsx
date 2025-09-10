@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import ProductCard from "../../reusable_components/ProductCard";
 import { FaFilter } from "react-icons/fa";
@@ -33,43 +34,19 @@ const products = [
   { name: "Freeman Beauty Korean Cica Soothing Clay Mask", price: 230, oldPrice: 600, discount: 16.54, rating: 2, reviews: 5, sold: 3, image: item5 },
 ];
 
-const AllProductsPage = () => {
+const Wishlist = () => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   return (
     <div className="relative py-12 ">
                 {/* Header */}
-            <div className=" px-[2rem] sm:px-[3rem] md:px-[2rem] bg-gray-200 py-4">
-            {/* Left side: Back + Title */}
-            <div className="bg-white flex justify-between items-center   p-4 rounded-xl shadow-sm">
-
-          
-            <div className="flex items-center gap-3 rounded-lg ">
-                <button
-                onClick={() => window.history.back()}
-                className="flex items-center text-gray-600 hover:text-gray-800"
-                >
-                ← Back
-                </button>
-                <span className="text-gray-700">
-                <span className="text-red-500 font-semibold">"all"</span> 145 items found
-                </span>
-            </div>
-
-            {/* Right side: Filter Button */}
-            <button
-            isOpen={isFilterOpen}
-                onClick={() => setIsFilterOpen(true)}
-                className="flex items-center gap-2 px-4 py-3 bg-gray-200 text-black rounded-xl hover:text-color3 transition"
-            >
-                <FaFilter /> Filter
-            </button>
-  </div>
+            <div className=" px-[2rem] sm:px-[4rem] md:px-[3rem]  py-4">
+           <h1 className="text-2xl">Wishlist (11 )</h1>
             </div>
 
 
       {/* Product Grid */}
-      <div className="grid grid-cols-2 xs:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[1rem] pt-8">
+      <div className="grid grid-cols-2 xs:px-[4rem] md:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[1rem] pt-8">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
@@ -125,4 +102,4 @@ const AllProductsPage = () => {
   );
 };
 
-export default AllProductsPage;
+export default Wishlist;

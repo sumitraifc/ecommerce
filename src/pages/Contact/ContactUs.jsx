@@ -5,8 +5,8 @@ const ContactUs = () => {
   return (
     <div className="py-12 px-4 lg:px-16 bg-gray-50">
       {/* Title */}
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-bold text-gray-800">
+      <div className="mb-10">
+        <h1 className="text-xl lg:text-3xl font-bold text-gray-800">
           Can’t find the answer you are looking for?
         </h1>
         <p className="text-gray-600 mt-2">
@@ -15,9 +15,9 @@ const ContactUs = () => {
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        {/* Contact Form */}
-        <form className="bg-white shadow-lg rounded-2xl p-6 lg:p-8 w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        {/* Contact Form (2 parts) */}
+        <form className="bg-white rounded-2xl  md:col-span-2 w-full order-2 md:order-1">
           {/* Full Name & Phone */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -77,12 +77,12 @@ const ContactUs = () => {
           </div>
         </form>
 
-        {/* Image */}
-        <div className="flex justify-center">
+        {/* Image (1 part) */}
+        <div className="flex justify-center md:col-span-1 order-1 md:order-2">
           <img
             src={contactImg}
             alt="Contact Us"
-            className="rounded-2xl shadow-lg w-full max-h-[500px] object-cover"
+            className="rounded-2xl shadow-lg w-full max-h-[700px] object-cover"
           />
         </div>
       </div>

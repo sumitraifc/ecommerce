@@ -8,6 +8,12 @@ import AllProductsPage from "./pages/Products/AllProductsPage";
 import PopulerProductsPage from "./pages/populer/mostpopuler";
 import BestDeals from "./pages/BestDeals/BestDeals";
 import ContactUs from "./pages/Contact/ContactUs";
+import Blog from "./pages/Blog/Blog";
+import Checkout from "./pages/checkout/checkout";
+import ChangePassword from "./pages/Dashboard/ChangePassword";
+import Wishlist from "./pages/Wishlist/Wishlist";
+import MyProfile from "./pages/Dashboard/profile";
+import OrderHistory from "./pages/Dashboard/orderhistory";
 // import Therapy from "./pages/therapy/Therapy";
 // import All_therapists from "./pages/therapists/All_therapists";
 // import WellBeing from "./pages/wellbeing/WellBeing";
@@ -39,6 +45,10 @@ export const Router = createBrowserRouter([
                 element: <CategoriesPage />
             },
             {
+                path: "/blogs",
+                element: <Blog />
+            },
+            {
                 path: "/all-shops",
                 element: <AllShops />
             },
@@ -59,8 +69,28 @@ export const Router = createBrowserRouter([
                 element: <AllProductsPage />
             },
             {
-                path: "//shop/:id",
+                path: "/shop/:id",
                 element: <ShopDetails  />
+            },
+            {
+                path: "/checkout",
+                element: <Checkout  />
+            },
+            {
+                path: "/changepassword",
+                element: <ChangePassword />
+            },
+            {
+                path: "/wishlist",
+                element: <Wishlist />
+            },
+            {
+                path: "/profile",
+                element: <MyProfile />
+            },
+            {
+                path: "/orderhistory",
+                element: <OrderHistory />
             },
             // {
             //     path: "/profile",

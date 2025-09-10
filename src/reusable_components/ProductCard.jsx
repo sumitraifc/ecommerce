@@ -1,10 +1,22 @@
-import { FaStar } from "react-icons/fa";
-import heart from "/heart.svg";
+import React, { useState } from "react";
+import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import bag from "/bag.svg";
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }) => {
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
+  const handleWishlist = () => {
+    if (isWishlisted) {
+      toast.info("Removed from wishlist");
+    } else {
+      toast.success("Added to wishlist");
+    }
+    setIsWishlisted(!isWishlisted);
+  };
+
   return (
-    <div className="group border border-gray-200 rounded-xl shadow-sm hover:border-color3 transition-all p-1 flex flex-col justify-between relative bg-white hover:border-[color3]">
+    <div className="group border border-gray-200 rounded-xl shadow-sm hover:border-color3 transition-all p-1 flex flex-col justify-between relative bg-white">
       {/* Discount Badge */}
       {product.discount && (
         <span className="absolute z-10 top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
@@ -12,13 +24,18 @@ const ProductCard = ({ product }) => {
         </span>
       )}
 
-      {/* Wishlist Icon (visible only on hover) */}
-      <button className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <img
-          src={heart}
-          alt="heart menu icon"
-          className="w-6 h-6"
-        />
+      {/* Wishlist Icon */}
+      <button
+        onClick={handleWishlist}
+        className={`absolute top-3 right-3 transition-opacity duration-300 z-10 ${
+          isWishlisted ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+        }`}
+      >
+        {isWishlisted ? (
+          <FaHeart className="w-6 h-6 text-red-500 transition-colors duration-300" />
+        ) : (
+          <FaRegHeart className="w-6 h-6 text-gray-400 hover:text-red-500 transition-colors duration-300" />
+        )}
       </button>
 
       {/* Product Image */}
@@ -26,7 +43,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 
@@ -56,19 +73,18 @@ const ProductCard = ({ product }) => {
         <span>{product.sold} Sold</span>
       </div>
 
-                {/* Buy Now Button */}
-            <div className="flex items-center gap-3 w-full">
-            {/* Bag Button */}
-            <button className="flex justify-center items-center w-10 h-10 border border-color3 text-color3 hover:bg-[color3] text-color3 transition rounded-lg">
-                <img src={bag} alt="bag menu icon" className="w-5 h-5 text-color3" />
-            </button>
+      {/* Actions */}
+      <div className="flex items-center gap-3 w-full">
+        {/* Bag Button */}
+        <button className="flex justify-center items-center w-10 h-10 border border-color3 text-color3 hover:bg-[color3] transition rounded-lg">
+          <img src={bag} alt="bag menu icon" className="w-5 h-5" />
+        </button>
 
-            {/* Buy Now Button */}
-            <button className="flex-1 border border-color3 text-color3   transition font-medium py-2 px-4 rounded-lg">
-                Buy Now
-            </button>
-            </div>
-
+        {/* Buy Now Button */}
+        <button className="flex-1 border border-color3 text-color3 transition font-medium py-2 px-4 rounded-lg">
+          Buy Now
+        </button>
+      </div>
     </div>
   );
 };
