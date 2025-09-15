@@ -6,9 +6,9 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="px-4 w-full py-2 rounded-lg border bg-gray-200 dark:bg-darkCard dark:text-darkText"
+      className="px-4 w-full py-2 bg-color1 rounded-lg border  dark:bg-darkCard dark:text-darkText"
     >
-      {theme === "dark" ? "🌙 Dark " : "☀️ Light"}
+      {theme === "dark" ? "🌙  " : "☀️"}
     </button>
   );
 };

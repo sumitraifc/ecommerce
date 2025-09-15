@@ -5,9 +5,10 @@ import { RouterProvider } from "react-router-dom"
 import { Router } from './Router.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-
+import { ThemeProvider } from "./ThemeProvider"; 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+     <ThemeProvider> 
     <ToastContainer
       position="bottom-left"
       autoClose={2000}
@@ -20,5 +21,6 @@ createRoot(document.getElementById('root')).render(
       pauseOnHover  
     />
       <RouterProvider router={Router} />
+ </ThemeProvider>
   </StrictMode>,
 )

@@ -114,7 +114,7 @@ export default function ChangePassword() {
   const passwordRequirements = validatePassword(formData.newPassword);
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-6">
+    <div className="min-h-screen bg-gray-50 pt-6 dark:bg-darkBg dark:text-darkText">
       {/* Header */}
       <div className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,7 +129,7 @@ export default function ChangePassword() {
 
       {/* Main Content */}
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-2xl font-bold text-gray-900 mb-8">Change Password</h1>
+        <h1 className="text-2xl font-bold text-gray-900 mb-8 dark:bg-darkBg dark:text-darkText">Change Password</h1>
 
         {success && (
           <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
@@ -149,11 +149,11 @@ export default function ChangePassword() {
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow-sm border p-6">
-          <div className="space-y-6">
+        <div className="bg-white rounded-lg shadow-sm border p-6 dark:bg-darkcard dark:text-darkText">
+          <div className="space-y-6 ">
             {/* Current Password */}
             <div>
-              <label htmlFor="currentPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="currentPassword" className=" dark:text-darkText block text-sm font-medium text-gray-700 mb-2">
                 Current Password
               </label>
               <div className="relative">
@@ -163,7 +163,7 @@ export default function ChangePassword() {
                   value={formData.currentPassword}
                   onChange={(e) => handleInputChange('currentPassword', e.target.value)}
                   placeholder="Enter Current Password"
-                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3 focus:outline-none pr-10 ${
+                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3 focus:outline-none pr-10 dark:bg-darkBg dark:text-darkText ${
                     errors.currentPassword ? 'border-red-300' : 'border-gray-300'
                   }`}
                 />
@@ -182,7 +182,7 @@ export default function ChangePassword() {
 
             {/* New Password */}
             <div>
-              <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="newPassword" className=" dark:text-darkText block text-sm font-medium text-gray-700 mb-2">
                 Create New Password
               </label>
               <div className="relative">
@@ -192,7 +192,7 @@ export default function ChangePassword() {
                   value={formData.newPassword}
                   onChange={(e) => handleInputChange('newPassword', e.target.value)}
                   placeholder="Enter Create New Password"
-                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none pr-10 ${
+                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3 dark:bg-darkBg dark:text-darkText focus:outline-none pr-10 ${
                     errors.newPassword ? 'border-red-300' : 'border-gray-300'
                   }`}
                 />
@@ -238,7 +238,7 @@ export default function ChangePassword() {
 
             {/* Confirm Password */}
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="confirmPassword" className=" dark:text-darkText block text-sm font-medium text-gray-700 mb-2">
                 Confirm New Password
               </label>
               <div className="relative">
@@ -248,7 +248,7 @@ export default function ChangePassword() {
                   value={formData.confirmPassword}
                   onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
                   placeholder="Confirm New Password"
-                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none pr-10 ${
+                  className={`w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  dark:bg-darkBg dark:text-darkText focus:outline-none pr-10 ${
                     errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
                   }`}
                 />

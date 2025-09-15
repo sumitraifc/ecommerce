@@ -1,5 +1,64 @@
+// /** @type {import('tailwindcss').Config} */
+// export default {
+//   content: [
+//     "./index.html",
+//     "./src/**/*.{js,ts,jsx,tsx}",
+//   ],
+//   theme: {
+//     screens: {
+//       'xsm': '510px',
+//       'sm': '640px',
+//       'md': '768px',
+//       'lg': '1024px',
+//       'xl': '1280px',
+//       '2xl': '1536px',
+//     },
+//      darkMode: "class",
+//     extend: {
+//       fontFamily: {
+//         heading: ['Lora', 'serif'],
+//         body: ['Open Sans', 'sans-serif'],
+//       },
+//       colors: {
+//         // veronovaGreen:"#578B89",
+//         // primary1: "#6EB4D1",
+//         // primary2: "#B2A7D6",
+//         // accent1: "#FF6E6C",
+//         // accent2: "#91C788",
+//         // grey: "#333333",
+//         // white: "#FFFFFF",
+//         // mainBg: "#FFFAF8",
+//          color1:"#bc254e",
+//          color2:"#ef4444",
+//          color3:"#eb2e61",
+//          color4:"#761731",
+//       },
+//        // 🌙 Dark theme colors
+//         darkBg: "#0f172a",   // background
+//         darkCard: "#1e293b", // card/bg containers
+//         darkText: "#f1f5f9", // text
+//         darkMuted: "#94a3b8", // secondary text
+      
+//     },
+//   },
+//   plugins: [
+//     function ({ addUtilities }) {
+//       addUtilities({
+//         '.scrollbar-hide': {
+//           '-ms-overflow-style': 'none', /* Internet Explorer 10+ */
+//           'scrollbar-width': 'none',   /* Firefox */
+//         },
+//         '.scrollbar-hide::-webkit-scrollbar': {
+//           display: 'none',             /* Chrome, Safari */
+//         },
+//       });
+//     },
+//   ],
+// };
+
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class", // ✅ keep this at root, not inside theme
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -19,18 +78,18 @@ export default {
         body: ['Open Sans', 'sans-serif'],
       },
       colors: {
-        // veronovaGreen:"#578B89",
-        // primary1: "#6EB4D1",
-        // primary2: "#B2A7D6",
-        // accent1: "#FF6E6C",
-        // accent2: "#91C788",
-        // grey: "#333333",
-        // white: "#FFFFFF",
-        // mainBg: "#FFFAF8",
-         color1:"#bc254e",
+        // 🔆 Light theme
+       color1:"#bc254e",
          color2:"#ef4444",
          color3:"#eb2e61",
          color4:"#761731",
+
+        // 🌙 Dark theme
+        darkBg: "#0f172a",     // main background
+        darkBg2: "#060606ff",     // main background
+        darkcard: "#1e293b",   // cards, containers
+        darkText: "rgba(253, 253, 253, 1)",   // main text
+        darkMuted: "#94a3b8",  // secondary text
       },
     },
   },
@@ -38,11 +97,11 @@ export default {
     function ({ addUtilities }) {
       addUtilities({
         '.scrollbar-hide': {
-          '-ms-overflow-style': 'none', /* Internet Explorer 10+ */
-          'scrollbar-width': 'none',   /* Firefox */
+          '-ms-overflow-style': 'none', /* IE 10+ */
+          'scrollbar-width': 'none',    /* Firefox */
         },
         '.scrollbar-hide::-webkit-scrollbar': {
-          display: 'none',             /* Chrome, Safari */
+          display: 'none',              /* Chrome, Safari */
         },
       });
     },

@@ -138,12 +138,12 @@ const OrderHistory = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 py-12 dark:bg-darkBg dark:text-darkText">
       <div className="max-w-7xl mx-auto p-6">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Order History</h1>
-          <p className="text-gray-600">Track and manage all your orders</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2 dark:bg-darkBg dark:text-darkText">Order History</h1>
+          <p className="text-gray-600 dark:bg-darkBg dark:text-darkText">Track and manage all your orders</p>
         </div>
 
         {/* Search Bar */}
@@ -187,16 +187,16 @@ const OrderHistory = () => {
             <div className="text-center py-12">
               <Package className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-600 text-lg">No orders found</p>
-              <p className="text-gray-400">Try adjusting your search or filters</p>
+              <p className="text-gray-400 dark:bg-darkBg dark:text-darkText">Try adjusting your search or filters</p>
             </div>
           ) : (
             <div className="divide-y divide-gray-200">
              {filteredOrders.map((order) => (
   <div
     key={order.id}
-    className="p-4 hover:bg-gray-50 transition-colors border-b last:border-none"
+    className="p-4 hover:bg-gray-50 transition-colors border-b last:border-none dark:bg-darkcard dark:text-darkText"
   >
-    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 ">
 
       {/* LEFT: Order ID + Date */}
       <div className="flex-1">

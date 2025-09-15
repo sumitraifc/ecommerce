@@ -28,7 +28,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
     <div className="fixed inset-0 flex justify-center items-center bg-white/40 z-50">
       <div
         className="bg-white w-[90%] max-w-2xl rounded-lg shadow-lg p-6 sm:p-8 relative
-        max-h-[90vh] overflow-y-auto scrollbar-hide"
+        max-h-[90vh] overflow-y-auto scrollbar-hide dark:bg-darkcard dark:text-darkText"
       >
         {/* Close Button */}
         <button
@@ -54,7 +54,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
             <input
               type="text"
               placeholder="Enter full name"
-              className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
+              className="w-full border dark:bg-darkBg dark:text-darkText border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
             />
           </div>
 
@@ -63,7 +63,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
             <label className="block text-sm font-medium mb-1 text-left">
               Country
             </label>
-            <select className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3">
+            <select className="w-full border dark:bg-darkBg dark:text-darkText border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3">
               <option>Select Country</option>
               <option>India</option>
               <option>USA</option>
@@ -77,13 +77,13 @@ const RegistrationModal = ({ isOpen, onClose }) => {
               Phone Number
             </label>
             <div className="flex">
-              <span className="border border-gray-300 bg-gray-100 border-r-0 rounded-l-md px-3 flex items-center text-gray-500">
+              <span className="border dark:bg-darkBg dark:text-darkText border-gray-300 bg-gray-100 border-r-0 rounded-l-md px-3 flex items-center text-gray-500">
                 +00
               </span>
               <input
                 type="text"
                 placeholder="Enter phone number"
-                className="w-full border border-gray-300 rounded-r-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
+                className="w-full border dark:bg-darkBg dark:text-darkText border-gray-300 rounded-r-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
               />
             </div>
           </div>
@@ -96,7 +96,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
             <input
               type="email"
               placeholder="Enter email address"
-              className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
+              className="w-full border dark:bg-darkBg dark:text-darkText border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
             />
           </div>
 
@@ -109,7 +109,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter Password"
-                className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
+                className="w-full border dark:bg-darkBg dark:text-darkText border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-1 focus:ring-color3"
               />
               <span
                 onClick={() => setShowPassword(!showPassword)}

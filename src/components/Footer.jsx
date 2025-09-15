@@ -14,7 +14,7 @@ import logo from "/logoWhite.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-color4 text-white font-body">
+    <footer className="bg-color4 text-white font-body dark:bg-darkBg2 dark:text-darkText">
       {/* 🔹 Top Section */}
       <div
         className="

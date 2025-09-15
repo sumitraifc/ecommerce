@@ -10,7 +10,7 @@ import {
 import SavedAddressModal from "./SavedAddressModal";
 
 export default function Checkout() {
-      const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [orderItems, setOrderItems] = useState([
     { id: 1, name: "Sample Product", price: 319.0, quantity: 1 },
   ]);
@@ -26,7 +26,7 @@ export default function Checkout() {
     phone: "1082769418",
     address: "2, thy6 37h, 22 sjdn, 1-100221",
   };
-   const addresses = [
+  const addresses = [
     {
       name: "hurhmk",
       phone: "10827694818",
@@ -67,19 +67,10 @@ export default function Checkout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-6">
+    <div className="min-h-screen bg-gray-50 dark:bg-darkBg dark:text-darkText pt-6">
       {/* Breadcrumb (Desktop Only) */}
-      <div className="hidden md:block bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center py-4 text-sm text-gray-600">
-            <Home className="w-4 h-4 mr-2" />
-            <span>Home</span>
-            <span className="mx-2">/</span>
-            <span>Cart</span>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">Checkout</span>
-          </div>
-        </div>
+      <div className="hidden md:block bg-white dark:bg-darkcard dark:text-darkText border-b dark:border-gray-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
       </div>
 
       {/* Main Grid */}
@@ -89,7 +80,7 @@ export default function Checkout() {
           <div className="lg:col-span-2 space-y-6">
             {/* Header */}
             <div className="flex items-center justify-between">
-              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-darkText">
                 Checkout
               </h1>
               <button
@@ -107,19 +98,17 @@ export default function Checkout() {
 
             {/* Mobile Order Summary */}
             {showOrderItems && (
-              <div className="lg: bg-white rounded-lg shadow-sm border p-4">
+              <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-4">
                 <div className="space-y-3">
                   {orderItems.map((item) => (
                     <div key={item.id} className="flex justify-between">
-                      <span className="text-sm">
-                        {item.name} × {item.quantity}
-                      </span>
+                      <span className="text-sm">{item.name} × {item.quantity}</span>
                       <span className="text-sm font-medium">
                         ${item.price.toFixed(2)}
                       </span>
                     </div>
                   ))}
-                  <hr />
+                  <hr className="border-gray-300 dark:border-gray-700" />
                   <div className="flex justify-between font-bold">
                     <span>Total</span>
                     <span>${totalPayable.toFixed(2)}</span>
@@ -129,24 +118,24 @@ export default function Checkout() {
             )}
 
             {/* Shipping Address */}
-            <div className="bg-white rounded-lg shadow-sm border p-5 sm:p-6">
+            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-5 sm:p-6">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-semibold text-gray-900">
-                  Shipping Address
-                </h2>
-                <button className="text-pink-600 hover:text-pink-700 text-sm font-medium"
-                onClick={() => setIsModalOpen(true)}>
+                <h2 className="text-lg font-semibold">Shipping Address</h2>
+                <button
+                  className="text-pink-600 hover:text-pink-700 text-sm font-medium"
+                  onClick={() => setIsModalOpen(true)}
+                >
                   Change
                 </button>
                 <SavedAddressModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        addresses={addresses}
-      />
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  addresses={addresses}
+                />
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 mr-3">
-                  <div className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-pink-100 dark:bg-gray-700 rounded-full flex items-center justify-center">
                     <MapPin className="w-4 h-4 text-pink-600" />
                   </div>
                 </div>
@@ -155,10 +144,10 @@ export default function Checkout() {
                     HOME
                   </div>
                   <div className="font-medium">{shippingAddress.name}</div>
-                  <div className="text-gray-600 text-sm">
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">
                     {shippingAddress.phone}
                   </div>
-                  <div className="text-gray-600 text-sm">
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">
                     {shippingAddress.address}
                   </div>
                 </div>
@@ -166,10 +155,10 @@ export default function Checkout() {
             </div>
 
             {/* Order Note */}
-            <div className="bg-white rounded-lg shadow-sm border p-5 sm:p-6">
+            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-5 sm:p-6">
               <h2 className="text-lg font-semibold mb-4">
                 Note{" "}
-                <span className="text-gray-500 text-sm font-normal">
+                <span className="text-gray-500 dark:text-gray-400 text-sm font-normal">
                   (Optional)
                 </span>
               </h2>
@@ -178,12 +167,12 @@ export default function Checkout() {
                 onChange={(e) => setOrderNote(e.target.value)}
                 placeholder="Write your note..."
                 rows={4}
-                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 resize-none"
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 resize-none dark:bg-darkBg dark:border-gray-700 dark:text-darkText"
               />
             </div>
 
             {/* Payment Method */}
-            <div className="bg-white rounded-lg shadow-sm border p-5 sm:p-6">
+            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-5 sm:p-6">
               <h2 className="text-lg font-semibold mb-4">Payment Method</h2>
               <div className="space-y-3">
                 <label className="flex items-center cursor-pointer">
@@ -193,10 +182,10 @@ export default function Checkout() {
                     value="cash"
                     checked={paymentMethod === "cash"}
                     onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="w-4 h-4 text-pink-600 border-gray-300 focus:ring-pink-500"
+                    className="w-4 h-4 text-pink-600 border-gray-300 dark:border-gray-700 focus:ring-pink-500"
                   />
                   <span className="ml-3 flex items-center">
-                    <Banknote className="w-5 h-5 text-gray-600 mr-2" />
+                    <Banknote className="w-5 h-5 text-gray-600 dark:text-gray-400 mr-2" />
                     Cash on delivery
                   </span>
                 </label>
@@ -207,10 +196,10 @@ export default function Checkout() {
                     value="card"
                     checked={paymentMethod === "card"}
                     onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="w-4 h-4 text-pink-600 border-gray-300 focus:ring-pink-500"
+                    className="w-4 h-4 text-pink-600 border-gray-300 dark:border-gray-700 focus:ring-pink-500"
                   />
                   <span className="ml-3 flex items-center">
-                    <CreditCard className="w-5 h-5 text-gray-600 mr-2" />
+                    <CreditCard className="w-5 h-5 text-gray-600 dark:text-gray-400 mr-2" />
                     Credit or Debit Card
                   </span>
                 </label>
@@ -218,20 +207,15 @@ export default function Checkout() {
             </div>
           </div>
 
-          {/* Right Column - Order Summary (Desktop) */}
+          {/* Right Column */}
           <div className="block lg:block">
-            <div className="bg-white rounded-lg shadow-sm border p-6 sticky top-4">
+            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-6 sticky top-4">
               {/* Order Summary */}
               <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
               <div className="space-y-3 mb-4">
                 {orderItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex justify-between text-sm text-gray-700"
-                  >
-                    <span>
-                      {item.name} × {item.quantity}
-                    </span>
+                  <div key={item.id} className="flex justify-between text-sm">
+                    <span>{item.name} × {item.quantity}</span>
                     <span className="font-medium">
                       ${item.price.toFixed(2)}
                     </span>
@@ -239,7 +223,7 @@ export default function Checkout() {
                 ))}
               </div>
 
-              <hr className="my-4" />
+              <hr className="my-4 border-gray-300 dark:border-gray-700" />
 
               {/* Price Breakdown */}
               <div className="space-y-2 text-sm">
@@ -255,34 +239,28 @@ export default function Checkout() {
                   <span>Shipping</span>
                   <span className="font-medium">${shippingCharge.toFixed(2)}</span>
                 </div>
-               <div className="bg-gray-100 p-4 rounded-lg space-y-3">
-  {/* Heading */}
-  <h3 className="text-lg font-semibold text-gray-800 mb-2">
-    VAT & Taxes Summary
-  </h3>
 
-  {/* VAT */}
-  <div className="flex justify-between bg-gray-200 p-2 rounded-lg">
-    <span>VAT (2%)</span>
-    <span className="font-medium">${vatAmount.toFixed(2)}</span>
-  </div>
-
-  {/* GST */}
-  <div className="flex justify-between bg-gray-200 p-2 rounded-lg">
-    <span>GST (3%)</span>
-    <span className="font-medium">${gstAmount.toFixed(2)}</span>
-  </div>
-
-  {/* Total Tax Amount */}
-  <div className="flex justify-between bg-gray-300 p-2 rounded-lg font-semibold">
-    <span>Total Tax Amount:</span>
-    <span>$15.95</span>
-  </div>
-</div>
-
+                {/* Tax Summary */}
+                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg space-y-3">
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-darkText mb-2">
+                    VAT & Taxes Summary
+                  </h3>
+                  <div className="flex justify-between bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">
+                    <span>VAT (2%)</span>
+                    <span className="font-medium">${vatAmount.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between bg-gray-200 dark:bg-gray-700 p-2 rounded-lg">
+                    <span>GST (3%)</span>
+                    <span className="font-medium">${gstAmount.toFixed(2)}</span>
+                  </div>
+                  <div className="flex justify-between bg-gray-300 dark:bg-gray-600 p-2 rounded-lg font-semibold">
+                    <span>Total Tax Amount:</span>
+                    <span>${totalTaxAmount.toFixed(2)}</span>
+                  </div>
+                </div>
               </div>
 
-              <hr className="my-4 border border-black" />
+              <hr className="my-4 border-gray-300 dark:border-gray-700" />
 
               {/* Total */}
               <div className="flex justify-between text-lg font-bold mb-6">
@@ -291,16 +269,16 @@ export default function Checkout() {
               </div>
 
               {/* Coupon Section */}
-              <div className="mb-6 bg-gray-200 p-4 rounded-lg">
+              <div className="mb-6 bg-gray-200 dark:bg-gray-800 p-4 rounded-lg">
                 <h3 className="text-sm font-medium mb-2">Have a coupon?</h3>
                 {appliedCoupon ? (
-                  <div className="flex justify-between items-center bg-green-50 border p-3 rounded-lg">
-                    <span className="text-green-800 font-medium">
+                  <div className="flex justify-between items-center bg-green-50 dark:bg-green-900 border p-3 rounded-lg">
+                    <span className="text-green-800 dark:text-green-300 font-medium">
                       {appliedCoupon.code}
                     </span>
                     <button
                       onClick={() => setAppliedCoupon(null)}
-                      className="text-green-600 hover:underline text-sm"
+                      className="text-green-600 dark:text-green-400 hover:underline text-sm"
                     >
                       Remove
                     </button>
@@ -312,12 +290,12 @@ export default function Checkout() {
                       value={couponCode}
                       onChange={(e) => setCouponCode(e.target.value)}
                       placeholder="Enter coupon code"
-                      className="flex-1 px-3 py-2 border rounded-l-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                      className="flex-1 px-3 py-2 border rounded-l-lg focus:ring-1 focus:ring-color3 focus:outline-none dark:bg-darkBg dark:border-gray-700 dark:text-darkText"
                     />
                     <button
                       onClick={handleApplyCoupon}
                       disabled={!couponCode.trim()}
-                      className="px-4 py-2 bg-black text-white rounded-r-lg hover:bg-gray-800 disabled:opacity-50"
+                      className="px-4 py-2 bg-black dark:bg-gray-700 text-white rounded-r-lg hover:bg-gray-800 disabled:opacity-50"
                     >
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -337,17 +315,6 @@ export default function Checkout() {
           </div>
         </div>
       </div>
-
-      {/* Mobile Place Order Button */}
-      {/* <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t p-4 shadow-md">
-        <button
-          onClick={handlePlaceOrder}
-          disabled={isPlacingOrder}
-          className="w-full bg-pink-600 text-white py-3 rounded-lg hover:bg-pink-700 disabled:opacity-50 transition"
-        >
-          {isPlacingOrder ? "Placing Order..." : "Place Order"}
-        </button>
-      </div> */}
     </div>
   );
 }

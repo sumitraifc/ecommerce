@@ -30,18 +30,18 @@ const CategorySection = () => {
     <section>
       {/* Title Row with Nav Buttons */}
       <div className="flex justify-between items-center gap-4 flex-wrap mb-4">
-        <h2 className="text-slate-950 text-lg md:text-3xl font-bold leading-9">
+        <h2 className="text-slate-950 text-lg md:text-3xl font-bold leading-9 dark:bg-darkBg dark:text-darkText">
           Categories
         </h2>
 
         {/* View All with < > */}
         {/* <div className="flex items-center gap-2"> */}
         <div className="flex justify-center items-center gap-4">
-          <button className="swiper-button-prev-category font-bold rounded-full w-9 h-9 flex items-center justify-center hover:bg-white">
+          <button className="swiper-button-prev-category font-bold rounded-full w-9 h-9 flex items-center justify-center  hover:bg-white">
             &lt;
           </button>
           <button
-            className="text-md text-gray-600 hover:"
+            className="text-md text-gray-600 dark:bg-darkBg dark:text-darkText hover:"
             onClick={() => navigate("/categories")}
           >
             View All

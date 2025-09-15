@@ -51,10 +51,10 @@ const shops = [
 
 const ShopSection = () => {
   return (
-    <div className=" bg-gray-100 rounded-lg">
+    <div className=" bg-gray-100 rounded-lg dark:bg-darkcard dark:text-darkText ">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-gray-800">Top Rated Shops</h2>
+      <div className="flex justify-between items-center mb-6 dark:bg-darkcard dark:text-darkText">
+        <h2 className="text-2xl font-bold text-gray-800 dark:bg-darkcard dark:text-darkText">Top Rated Shops</h2>
         <Link to="/all-shops" className="text-primary font-medium ">
           View All 
         </Link>

@@ -40,7 +40,7 @@ const JustForYou = () => {
   return (
     <div className="py-12">
       {/* Heading */}
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">Just For You</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6 dark:bg-darkBg dark:text-darkText">Just For You</h2>
 
       {/* Product Grid */}
       <div className="grid grid-cols-2 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6">

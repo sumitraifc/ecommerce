@@ -9,7 +9,7 @@ const blogs = [
     id: 1,
     category: "Clothing, Shoes & Jewelry",
     title: "Top Clothing Trends to Elevate Your Style",
-    description: "Fashion is ever-evolving, reflecting shifts in culture...",
+    description: "Fashion is ever-evolving, reflecting boost  shifts in culture...",
     image:blog1,
     date: "27 Jan, 2025",
     views: 5,
@@ -48,23 +48,23 @@ const Blog = () => {
       : blogs.filter((blog) => blog.category === selectedCategory);
 
   return (
-    <div className="px-4 md:px-8 lg:px-16 py-10 bg-gray-50 min-h-screen">
+    <div className="px-4 md:px-8 lg:px-16 py-14 bg-gray-50 min-h-screen dark:bg-darkBg dark:text-darkText">
 
 
-        <div className="bg-white rounded-lg">
+        <div className="bg-white rounded-lg dark:bg-darkcard dark:text-darkText">
       {/* Title */}
-      <h1 className="text-2xl font-bold text-gray-800 mb- py-2 px-2 ">Ready Blogs</h1>
+      <h1 className="text-2xl font-bold text-gray-800 mb- py-2 px-2 dark:bg-darkcard dark:text-darkText ">Ready Blogs</h1>
 
       {/* Categories */}
-      <div className="flex flex-wrap  gap-2 mb-10 py-2">
+      <div className="flex flex-wrap  gap-2 mb-10 py-2  ">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`px-4 py-2 rounded-lg text-sm font-medium transition border ${
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition border dark:bg-darkBg dark:text-darkText ${
               selectedCategory === cat
                 ? " text-color3 border-color3"
-                : "bg-white text-gray-700 hover:text-color3"
+                : "bg-white text-gray-700 hover:text-color3 "
             }`}
           >
             {cat}
@@ -77,7 +77,7 @@ const Blog = () => {
         {filteredBlogs.map((blog) => (
           <div
             key={blog.id}
-            className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition"
+            className="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-lg transition "
           >
             <div className="relative">
               <img
@@ -89,11 +89,11 @@ const Blog = () => {
                 New
               </span>
             </div>
-            <div className="p-4">
+            <div className="p-4 dark:bg-darkcard dark:text-darkText">
               <span className="text-color3 text-xs font-semibold">
                 {blog.category}
               </span>
-              <h3 className="mt-1 text-lg font-bold text-gray-800">
+              <h3 className="mt-1 text-lg font-bold text-gray-800 dark:bg-darkcard dark:text-darkText">
                 {blog.title}
               </h3>
               <p className="text-sm text-gray-600 mt-1 line-clamp-2">

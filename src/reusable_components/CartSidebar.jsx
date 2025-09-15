@@ -60,7 +60,7 @@ const CartSidebar = ({isCartOpen,setIsCartOpen}) => {
   };
 
   const VoucherModal = () => (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 ">
       <div className="bg-white rounded-lg p-6 w-96 max-w-90vw">
         <div className="flex justify-between items-center mb-4">
           <h3 className="text-lg font-semibold">Apply Store Voucher</h3>
@@ -97,7 +97,7 @@ const CartSidebar = ({isCartOpen,setIsCartOpen}) => {
           />
           
           {/* Sidebar */}
-          <div className="fixed right-0 top-0 h-full w-120 bg-white shadow-lg z-50 flex flex-col">
+          <div className="fixed right-0 top-0 h-full w-[400px] bg-white shadow-lg z-50 flex flex-col dark:bg-darkcard dark:text-darkText">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b">
               <div className="flex items-center gap-2">
@@ -124,7 +124,7 @@ const CartSidebar = ({isCartOpen,setIsCartOpen}) => {
                   {/* Store Header */}
                   <button 
                     onClick={() => setSelectedStore(selectedStore === store.id ? null : store.id)}
-                    className="w-full p-4 flex items-center justify-between hover:bg-gray-50"
+                    className="w-full p-4 flex items-center justify-between hover:bg-gray-50 hover:dark:bg-gray-700 dark:text-white"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
@@ -141,9 +141,9 @@ const CartSidebar = ({isCartOpen,setIsCartOpen}) => {
 
                   {/* Store Items */}
                   {selectedStore === store.id && (
-                    <div className="space-y-4 p-4 bg-gray-50">
+                    <div className="space-y-4 p-4 bg-gray-50 dark:bg-darkBg dark:text-darkText">
                       {store.items.map(item => (
-                        <div key={item.id} className="flex gap-3">
+                        <div key={item.id} className="flex gap-3 dark:bg-darkcard dark:text-darkText">
                           <img 
                             src={item.image} 
                             alt={item.name}

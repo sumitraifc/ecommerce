@@ -14,23 +14,11 @@ import ChangePassword from "./pages/Dashboard/ChangePassword";
 import Wishlist from "./pages/Wishlist/Wishlist";
 import MyProfile from "./pages/Dashboard/profile";
 import OrderHistory from "./pages/Dashboard/orderhistory";
-// import Therapy from "./pages/therapy/Therapy";
-// import All_therapists from "./pages/therapists/All_therapists";
-// import WellBeing from "./pages/wellbeing/WellBeing";
-// import ContactForm from "./pages/contactForm/ContactForm";
-// import AboutUs from "./pages/aboutUs/AboutUs";
-// import Login from "./pages/auth/Login";
-// import Register from "./pages/auth/Register";
-// import SelectedTherapists from "./pages/therapists/SelectedTherapists";
-// import Career from "./pages/Career";
-// import Terms_condition from "./pages/policy/Terms_condition";
-// import Faqs from "./pages/policy/Faqs";
-// import Pricing from "./pages/policy/Pricing";
-// import Privacy_Policy from "./pages/policy/Privacy_Policy";
-// import Refund_policy from "./pages/policy/Refund_policy";
-// import Profile from "./components/Profile";
-// import ProtectedRoutes from "./pages/auth/ProtectedRoutes"
-// import CorporateContactForm from "./pages/corporate/CorporateContactForm";
+import TermsOfService from "./pages/Dashboard/TermsOfService";
+import PrivacyPolicy from "./pages/Dashboard/PrivacyPolicy";
+import ReturnOrders from "./pages/Dashboard/ReturnOrders";
+import ManageAddress from "./pages/Dashboard/ManageAddress";
+
 export const Router = createBrowserRouter([
     {
         path: "/",
@@ -91,6 +79,22 @@ export const Router = createBrowserRouter([
             {
                 path: "/orderhistory",
                 element: <OrderHistory />
+            },
+            {
+                path: "/termsservice",
+                element: <TermsOfService />
+            },
+            {
+                path: "/privacypolicy",
+                element: <PrivacyPolicy />
+            },
+            {
+                path: "/returnorders",
+                element: <ReturnOrders />
+            },
+            {
+                path: "/manageaddress",
+                element: <ManageAddress />
             },
             // {
             //     path: "/profile",

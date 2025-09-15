@@ -12,8 +12,8 @@ const SavedAddressModal = ({ isOpen, onClose, addresses = [] }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50 py-5 ">
-      <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg p-6 relative ">
+    <div className="fixed inset-0 flex items-center justify-center bg-black/30 z-50 py-5  ">
+      <div className="bg-white w-full max-w-2xl rounded-xl shadow-lg p-6 relative dark:bg-darkBg dark:text-darkText">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -23,7 +23,7 @@ const SavedAddressModal = ({ isOpen, onClose, addresses = [] }) => {
         </button>
 
         {/* Heading */}
-        <h2 className="text-2xl font-semibold mb-4 py-5">Saved Address</h2>
+        <h2 className="text-2xl font-semibold mb-4 py-5">Saved Address </h2>
 
         {/* Saved Addresses */}
         <div className="space-y-3">

@@ -79,11 +79,11 @@ const products = [
 const ProductSection = () => {
   return (
     <section className=" py-8">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl lg:text-2xl font-bold text-gray-800">
+      <div className="flex justify-between items-center mb-6 dark:bg-darkBg dark:text-darkText">
+        <h2 className="text-xl lg:text-2xl font-bold text-gray-800 dark:bg-darkBg dark:text-darkText">
           Popular Products
         </h2>
-        <button className="text-sm text-blue-600 hover:">
+        <button className="text-sm text-gray-800 dark:bg-darkBg dark:text-darkText hover:">
           View All
         </button>
       </div>

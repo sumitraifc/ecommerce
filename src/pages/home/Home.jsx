@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="flex flex-col  pt-8"> {/* 🔹 Added pt-16 to fix overlap */}
       {/* 🔹 Hero Slider Section */}
-      <section  className="px-[1rem] sm:px-[4rem]">
+      <section  className="px-[1rem] sm:px-[4rem] pt-1 dark:bg-darkBg dark:text-darkText">
         <SliderSection />
       </section>
       
@@ -19,11 +19,11 @@ const Home = () => {
    
 
      
-<section className="px-[1rem] sm:px-[4rem]">
+<section className="px-[1rem] sm:px-[4rem] dark:bg-darkBg dark:text-darkText">
     {<Topbar />}
 </section>
       
-<section className="px-[1rem] sm:px-[4rem]" >
+<section className="px-[1rem] sm:px-[4rem] dark:bg-darkBg dark:text-darkText" >
      <CategorySection />
 </section>
      
@@ -35,11 +35,11 @@ const Home = () => {
        
         <ProductSection />
       </section>
-      <section className="bg-gray-100 px-[1rem] sm:px-[4rem] py-12">
+      <section className="bg-gray-100 px-[1rem] sm:px-[4rem] py-12 dark:bg-darkcard dark:text-darkText">
        
         <ShopSection />
       </section>
-      <section className="px-[1rem] sm:px-[4rem]">
+      <section className="px-[1rem] sm:px-[4rem]  dark:text-darkText">
        
         <JustForYou />
       </section>

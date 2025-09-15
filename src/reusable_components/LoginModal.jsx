@@ -9,7 +9,7 @@ const LoginModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50">
-      <div className="bg-white rounded-2xl shadow-lg w-[90%] max-w-xl p-6 relative text-slate-700 text-base font-normal leading-normal">
+      <div className="bg-white rounded-2xl shadow-lg w-[90%] max-w-xl p-6 relative text-slate-700 text-base font-normal leading-normal dark:bg-darkBg dark:text-darkText">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -19,33 +19,33 @@ const LoginModal = ({ isOpen, onClose }) => {
         </button>
 
         {/* Title */}
-        <h2 className="text-2xl font-semibold mb-1 text-black">Welcome!</h2>
-        <p className="mb-6 mt-3 text-black text-xl">Please Login to continue</p>
+        <h2 className="text-2xl font-semibold mb-1 text-black dark:bg-darkBg dark:text-darkText">Welcome!</h2>
+        <p className="mb-6 mt-3 text-black dark:bg-darkBg dark:text-darkText text-xl">Please Login to continue</p>
 
         {/* Form */}
         <form className="space-y-6">
           {/* Email / Phone */}
           <div>
-            <label className="text-slate-700 text-base font-normal leading-normal mb-2 block">
+            <label className="text-slate-700 text-base font-normal leading-normal mb-2 block dark:bg-darkBg dark:text-darkText">
               Email / Phone Number
             </label>
             <input
               type="text"
               placeholder="Enter email or phone number"
-              className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-color3"
+              className="w-full border rounded-lg px-4 py-3 dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-1 focus:ring-color3"
             />
           </div>
 
           {/* Password */}
           <div>
-            <label className="text-slate-700 text-base font-normal leading-normal mb-2 block">
+            <label className="text-slate-700 text-base font-normal leading-normal mb-2 block dark:bg-darkBg dark:text-darkText">
               Password
             </label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
-                className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-color3"
+                className="w-full border rounded-lg px-4 py-3 dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-1 focus:ring-color3"
               />
               <button
                 type="button"
@@ -75,7 +75,7 @@ const LoginModal = ({ isOpen, onClose }) => {
         </form>
 
         {/* Sign Up Link */}
-        <p className="text-center text-black text- mt-4 text-bold pt-1">
+        <p className="text-center text-black text- mt-4 text-bold pt-1 dark:bg-darkBg dark:text-darkText">
           Don’t have an account?{" "}
            <button
         className="text-color3 hover:underline font-bold"

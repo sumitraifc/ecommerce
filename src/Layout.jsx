@@ -21,10 +21,10 @@ const Layout = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full dark:bg-darkBg dark:text-darkText ">
       {/* 🔹 Fixed Header */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 ${
+        className={`fixed top-0 left-0 right-0 z-50  ${
           isScrolled ? "bg-primary2" : "bg-transparent"
         } transition-all duration-300 ${isScrolled ? "h-[6rem]" : "h-[8rem]"}`}
       >

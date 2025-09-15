@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="group border border-gray-200 rounded-xl shadow-sm hover:border-color3 transition-all p-1 flex flex-col justify-between relative bg-white">
+    <div className=" dark:bg-darkcard dark:text-darkText group border border-gray-200 rounded-xl shadow-sm hover:border-color3 transition-all p-1 flex flex-col justify-between relative bg-white">
       {/* Discount Badge */}
       {product.discount && (
         <span className="absolute z-10 top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
@@ -48,7 +48,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Product Name */}
-      <h3 className="text-sm font-medium text-gray-800 mb-2 truncate">
+      <h3 className="text-sm font-medium text-gray-800 mb-2 truncate  dark:text-darkText">
         {product.name}
       </h3>
 
@@ -76,7 +76,7 @@ const ProductCard = ({ product }) => {
       {/* Actions */}
       <div className="flex items-center gap-3 w-full">
         {/* Bag Button */}
-        <button className="flex justify-center items-center w-10 h-10 border border-color3 text-color3 hover:bg-[color3] transition rounded-lg">
+        <button className="flex justify-center items-center w-10 h-10 border border-color3 text-color3 hover:bg-[color3] transition rounded-lg  dark:text-darkText">
           <img src={bag} alt="bag menu icon" className="w-5 h-5" />
         </button>
 

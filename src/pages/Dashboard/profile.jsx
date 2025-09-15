@@ -57,16 +57,16 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 py-16 dark:bg-darkBg dark:text-darkText">
       <div className="max-w-4xl mx-auto p-6">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">My Profile</h1>
+        <div className="mb-8 dark:bg-darkBg dark:text-darkText">
+          <h1 className="text-3xl font-bold text-gray-900 dark:bg-darkBg dark:text-darkText ">My Profile</h1>
           <p className="text-gray-600 mt-2">Manage your personal information and preferences</p>
         </div>
 
         {/* Main Profile Card */}
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden ">
          {/* Profile Picture Section */}
 <div className="bg-gradient-to-r from-blue-50 to-indigo-50 px-8 py-4">
       {/* Top Row: Profile Pic label left + Verified right */}
@@ -122,11 +122,11 @@ const MyProfile = () => {
 
 
           {/* Form Section */}
-          <div className="p-8">
+          <div className="p-8 dark:bg-darkBg dark:text-darkText">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Name Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black dark:bg-darkBg dark:text-darkText mb-2">
                   <User className="w-4 h-4 inline mr-1" />
                   Name
                 </label>
@@ -134,14 +134,14 @@ const MyProfile = () => {
                   type="text"
                   value={profileData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1   focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1   focus:outline-none focus:ring-color3 focus:border-transparent transition-colors dark:bg-darkBg dark:text-darkText"
                   placeholder="Enter your full name"
                 />
               </div>
 
               {/* Country Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black dark:bg-darkBg dark:text-darkText mb-2">
                   <MapPin className="w-4 h-4 inline mr-1" />
                   Country
                 </label>
@@ -149,7 +149,7 @@ const MyProfile = () => {
                   <select
                     value={profileData.country}
                     onChange={(e) => handleInputChange('country', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  focus:outline-none focus:ring-color3 focus:border-transparent appearance-none bg-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-color3 focus:border-transparent appearance-none bg-white transition-colors"
                   >
                     {countries.map(country => (
                       <option key={country} value={country}>{country}</option>
@@ -161,7 +161,7 @@ const MyProfile = () => {
 
               {/* Mobile Number Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black dark:bg-darkBg dark:text-darkText mb-2">
                   <Phone className="w-4 h-4 inline mr-1" />
                   Mobile Number
                 </label>
@@ -169,7 +169,7 @@ const MyProfile = () => {
                   <select
                     value={profileData.countryCode}
                     onChange={(e) => handleInputChange('countryCode', e.target.value)}
-                    className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-1  focus:outline-none focus:ring-color3 focus:border-transparent bg-gray-50"
+                    className="px-3 py-3 border border-gray-300 rounded-lg focus:ring-1  dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-color3 focus:border-transparent bg-gray-50"
                   >
                     {countryCodes.map(item => (
                       <option key={item.code} value={item.code}>
@@ -181,7 +181,7 @@ const MyProfile = () => {
                     type="tel"
                     value={profileData.mobile}
                     onChange={(e) => handleInputChange('mobile', e.target.value)}
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
                     placeholder="Enter mobile number"
                   />
                 </div>
@@ -189,14 +189,14 @@ const MyProfile = () => {
 
               {/* Gender Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black dark:bg-darkBg dark:text-darkText mb-2">
                   Gender
                 </label>
                 <div className="relative">
                   <select
                     value={profileData.gender}
                     onChange={(e) => handleInputChange('gender', e.target.value)}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  focus:outline-none focus:ring-color3 focus:border-transparent appearance-none bg-white transition-colors"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-color3 focus:border-transparent appearance-none bg-white transition-colors"
                   >
                     <option value="">Select a gender</option>
                     {genderOptions.map(option => (
@@ -209,7 +209,7 @@ const MyProfile = () => {
 
               {/* Date of Birth Field */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-black dark:bg-darkBg dark:text-darkText mb-2">
                   <Calendar className="w-4 h-4 inline mr-1" />
                   Date of Birth
                 </label>
@@ -217,7 +217,7 @@ const MyProfile = () => {
                   type="date"
                   value={profileData.dateOfBirth}
                   onChange={(e) => handleInputChange('dateOfBirth', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1  focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1 dark:bg-darkBg dark:text-darkText  focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
                 />
               </div>
 
@@ -225,7 +225,7 @@ const MyProfile = () => {
                             <div>
                                 <div className="flex justify-between items-center mb-2">
                 {/* Left side: Label */}
-                <label className="flex items-center text-sm font-medium text-gray-700">
+                <label className="flex items-center text-sm font-medium text-black dark:bg-darkBg dark:text-darkText">
                     <Mail className="w-4 h-4 mr-1" />
                     Email Address
                 </label>
@@ -241,7 +241,7 @@ const MyProfile = () => {
                   type="email"
                   value={profileData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1   focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-1   dark:bg-darkBg dark:text-darkText focus:outline-none focus:ring-color3 focus:border-transparent transition-colors"
                   placeholder="Enter email address"
                 />
               </div>
@@ -257,7 +257,7 @@ const MyProfile = () => {
               </button>
               {/* <button
                 onClick={() => setIsEditing(!isEditing)}
-                className="px-8 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                className="px-8 py-3 border border-gray-300 text-black dark:bg-darkBg dark:text-darkText font-medium rounded-lg hover:bg-gray-50 transition-colors"
               >
                 {isEditing ? 'Cancel' : 'Edit Profile'}
               </button> */}

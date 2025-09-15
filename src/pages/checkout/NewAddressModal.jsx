@@ -32,7 +32,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-20">
-      <div className="bg-white rounded-2xl shadow-lg w-full max-w-3xl p-6 relative">
+      <div className="bg-white rounded-2xl shadow-lg w-full max-w-3xl p-6 relative dark:bg-darkcard dark:text-darkText">
         {/* Header */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">New Address</h2>
@@ -56,7 +56,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 onChange={handleChange}
                 required
                 placeholder="Enter name"
-                className="w-full mt-1 px-3   py-3 border rounded-lg focus:outline-none focus:ring-[1px] focus:ring-color3 "
+                className="w-full mt-1 px-3   py-3 border dark:bg-darkBg dark:text-darkText rounded-lg focus:outline-none focus:ring-[1px] focus:ring-color3 "
               />
             </div>
             <div>
@@ -70,7 +70,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 onChange={handleChange}
                 required
                 placeholder="Enter phone"
-                className="w-full mt-1 px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full mt-1 px-3 py-3 border  dark:bg-darkBg dark:text-darkText rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 value={formData.area}
                 onChange={handleChange}
                 placeholder="Enter Area"
-                className="w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full px-3 py-3 border rounded-lg dark:bg-darkBg dark:text-darkText focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
             <div>
@@ -96,7 +96,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 value={formData.flat}
                 onChange={handleChange}
                 placeholder="Enter Flat no"
-                className="w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full px-3 py-3 border rounded-lg  dark:bg-darkBg dark:text-darkText focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 value={formData.postalCode}
                 onChange={handleChange}
                 placeholder="Enter Postal Code"
-                className="w-full px-3 py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full px-3 py-3 border rounded-lg dark:bg-darkBg dark:text-darkText focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 onChange={handleChange}
                 required
                 placeholder="Enter address 1"
-                className="w-full mt-1 px-3  py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full mt-1 px-3  py-3 border dark:bg-darkBg dark:text-darkText rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
             <div>
@@ -136,7 +136,7 @@ export default function NewAddressModal({ isOpen, onClose, onSubmit }) {
                 value={formData.address2}
                 onChange={handleChange}
                 placeholder="Enter address 2"
-                className="w-full mt-1 px-3  py-3 border rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
+                className="w-full mt-1 px-3  py-3 border dark:bg-darkBg dark:text-darkText rounded-lg focus:ring-1 focus:ring-color3  focus:outline-none"
               />
             </div>
           </div>

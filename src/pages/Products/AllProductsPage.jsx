@@ -39,20 +39,20 @@ const AllProductsPage = () => {
   return (
     <div className="relative py-12 ">
                 {/* Header */}
-            <div className=" px-[2rem] sm:px-[3rem] md:px-[2rem] bg-gray-200 py-4">
+            <div className=" px-[2rem] sm:px-[3rem] md:px-[2rem] bg-gray-200 py-4 dark:bg-darkcard dark:text-darkText">
             {/* Left side: Back + Title */}
-            <div className="bg-white flex justify-between items-center   p-4 rounded-xl shadow-sm">
+            <div className="bg-white flex justify-between items-center   p-4 rounded-xl shadow-sm dark:bg-darkBg dark:text-darkText">
 
           
-            <div className="flex items-center gap-3 rounded-lg ">
+            <div className="flex items-center gap-3 rounded-lg  ">
                 <button
                 onClick={() => window.history.back()}
-                className="flex items-center text-gray-600 hover:text-gray-800"
+                className="flex items-center text-gray-600 hover:text-gray-800 dark:bg-darkBg dark:text-darkText"
                 >
                 ← Back
                 </button>
-                <span className="text-gray-700">
-                <span className="text-red-500 font-semibold">"all"</span> 145 items found
+                <span className="text-gray-700 dark:bg-darkBg dark:text-darkText">
+                <span className="text-red-500 font-semibold dark:bg-darkBg dark:text-darkText">"all"</span> 145 items found
                 </span>
             </div>
 
@@ -60,7 +60,7 @@ const AllProductsPage = () => {
             <button
             isOpen={isFilterOpen}
                 onClick={() => setIsFilterOpen(true)}
-                className="flex items-center gap-2 px-4 py-3 bg-gray-200 text-black rounded-xl hover:text-color3 transition"
+                className="flex items-center gap-2 px-4 py-3 bg-gray-200 text-black rounded-xl hover:text-color3 transition dark:bg-darkcard dark:text-darkText "
             >
                 <FaFilter /> Filter
             </button>
@@ -79,7 +79,7 @@ const AllProductsPage = () => {
       {isFilterOpen && <FilterSidebar isOpen={isFilterOpen} onClose={() => setIsFilterOpen(false)} />}
 
         {/* Pagination Footer */}
-<div className="flex justify-between items-center w-full mt-8 gap-4 flex-wrap px-[4rem]">
+<div className="flex justify-between items-center w-full mt-8 gap-4 flex-wrap px-[4rem] ">
   {/* Left: Results Info */}
   <p className="text-sm text-gray-600">
     Showing <span className="font-medium">1</span> to <span className="font-medium">12</span> of <span className="font-medium">145</span> results

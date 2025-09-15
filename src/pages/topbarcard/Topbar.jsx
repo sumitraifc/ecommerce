@@ -41,9 +41,10 @@ const Topbar = () => {
   return (
     <section className="py-8 ">
       {/* 3. Applied your requested Tailwind CSS classes to this container */}
-      <div className="mx-auto max-w-8xl p-6 bg-white rounded-xl shadow-lg border border-dashed border-slate-300 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-8 lg:gap-16">
+      <div className="mx-auto max-w-8xl p-6 bg-white rounded-xl shadow-lg border border-dashed border-slate-300 grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-8 lg:gap-16
+      dark:bg-darkBg dark:text-darkText">
         {features.map((feature, index) => (
-          <div className="flex items-center gap-4" key={index}>
+          <div className="flex items-center gap-4 " key={index}>
             {/* Icon wrapper with dynamic background color */}
             <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl ${feature.bgColor}`}>
               {/* 4. Use an <img> tag to display the SVG */}
