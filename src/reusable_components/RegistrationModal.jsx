@@ -25,7 +25,7 @@ const RegistrationModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-white/40 z-50">
+    <div className="fixed inset-0 flex justify-center items-center bg-black/40 z-50">
       <div
         className="bg-white w-[90%] max-w-2xl rounded-lg shadow-lg p-6 sm:p-8 relative
         max-h-[90vh] overflow-y-auto scrollbar-hide dark:bg-darkcard dark:text-darkText"

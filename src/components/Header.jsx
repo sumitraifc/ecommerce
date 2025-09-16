@@ -38,6 +38,8 @@ import { GiReturnArrow } from "react-icons/gi";
 import { IoMdReturnLeft } from "react-icons/io";
 import LogoutModal from "../reusable_components/LogoutModal";
 import DarkModeToggle from "../reusable_components/DarkModeToggle";
+import RegistrationModal from "../reusable_components/RegistrationModal";
+import CategoryDropdown from "../reusable_components/CategoryDropdown";
 
 const Header = ({ isScrolled }) => {
   const navigate = useNavigate();
@@ -48,6 +50,7 @@ const Header = ({ isScrolled }) => {
   const [isAppOpen, setIsAppOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
  const [isLogoutOpen, setIsLogoutOpen] = useState(false);
   // Mock Auth (replace later with real auth)
@@ -103,25 +106,34 @@ const handleLogout = () => {
 
   return (
     <header
-      className={`w-full transition-all duration-300 ${
+      className={`w-full transition-all duration-300  ${
         isScrolled ? "bg-white fixed top-0 z-50 shadow-md" : ""
       }`}
     >
-      {/* 🔹 Top Bar */}
-      <div className="bg-color1 text-white dark:bg-darkBg2 dark:text-darkText text-sm lg:px-[4rem] px-3 flex justify-between items-center py-2">
-        <div className="flex gap-4">
-          <span className="cursor-pointer">Become a Seller</span>
-          <span>Hotline: 01963953998</span>
-        </div>
-        <div className="flex gap-4">
-          {/* <span className="cursor-pointer">USD, $</span> */}
-          <DarkModeToggle />
-          <span className="cursor-pointer">English</span>
-        </div>
-      </div>
+    {/* 🔹 Top Bar */}
+<div className="bg-color1 text-white dark:bg-darkBg2 dark:text-darkText text-sm px-[2rem] md:px-[4rem] py-1">
+  <div className="flex flex-row sm:flex-row justify-between items-center gap-2 sm:gap-0">
+    
+    {/* Left Side */}
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center">
+      <span className="cursor-pointer">Become a Seller</span>
+      <span className="text-center sm:text-left">Hotline: 01963953998</span>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex gap-4 items-center">
+      {/* You can uncomment this if needed */}
+      {/* <span className="cursor-pointer">USD, $</span> */}
+      <DarkModeToggle />
+      <span className="cursor-pointer">English</span>
+    </div>
+
+  </div>
+</div>
+
 
       {/* 🔹 Main Header */}
-      <div className="lg:px-[4rem] px-3 py-3 flex items-center justify-between gap-4 dark:bg-darkBg dark:text-darkText">
+      <div className="md:px-[4rem] px-[2rem] py-3 flex items-center justify-between gap-4 dark:bg-darkBg dark:text-darkText">
         {/* Logo */}
         <img src={logoeee} alt="Logo" className="w-[120px] sm:w-[140px]" />
 
@@ -130,7 +142,7 @@ const handleLogout = () => {
           <input
             type="text"
             placeholder="Search product"
-            className="border rounded-l-md w-full px-4 py-2 focus:outline-none dark:bg-darkBg dark:text-darkText"
+            className="border rounded-l-md w-full px-4 py-2  focus:outline-none focus:ring-1 focus:ring-color1 dark:bg-darkBg dark:text-darkText"
           />
           <button className="bg-color1 text-white px-4 rounded-r-md">
             <FaSearch />
@@ -260,8 +272,12 @@ const handleLogout = () => {
   </div>
 ) : (
   <button
-    onClick={() => setIsLoginOpen(true)}
-    className={`hidden md:flex items-center gap-2 cursor-pointer transition-colors py-3 px-2 rounded-lg ${
+    // onClick={() => setIsLoginOpen(true)}
+    onClick={() => {
+          setIsLoginOpen(true);
+          setIsRegisterOpen(false); // Just in case
+        }}
+    className={`hidden md:flex items-center gap-2 cursor-pointer transition-colors dark:text-darkText dark:bg-darkcard py-3 px-2 rounded-lg ${
       isLoginOpen ? "bg-[#fbd5df] text-red-500" : "text-slate-700 hover:text-red-500"
     }`}
   >
@@ -283,54 +299,95 @@ const handleLogout = () => {
       </div>
 
       {/* 🔹 Desktop Nav */}
-     <nav className="flex border-t border-b border-slate-100  dark:bg-darkBg dark:text-darkText lg:px-[4rem] px-4 h-14 items-center justify-between">
+     {/* <nav className="flex border-t border-b border-slate-100  dark:bg-darkBg dark:text-darkText lg:px-[4rem] px-4 h-14 items-center justify-between"> */}
+     <nav className="main-container dark:bg-darkcard dark:text-darkText flex items-center justify-between md:gap-3 lg:gap-4 border-t md:px-[4rem] px-[2rem] border-b border-slate-100 flex-wrap md:flex-nowrap relative">
   {/* Categories */}
-  <div className="relative">
+  <div className="relative border-r border-slate-100 p-1 xl:w-[220px] ">
     <button
       onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
-      className="flex items-center gap-2 font-semibold"
+      // className="flex items-center gap-2 font-semibold"
+      className={`h-10 lg:h-11 flex items-center gap-2 outline-none rounded-lg transition-all text-slate-600 dark:text-darkText dark:bg-darkcard
+        ${
+    isCategoriesOpen ? 'text-red-500 bg-[#fbd5df] rounded' : ''
+  }`}
     >
       <img src={fourdot} alt="Categories" className="w-6 h-6" />
-      <span className=" sm:inline">Categories</span>
+      {/* <span className=" sm:inline ">Categories</span> */}
+      <span
+  className={`sm:inline px-2 py-1 transition-all duration-200 ${
+    isCategoriesOpen ? 'text-red-500 bg-[#fbd5df] rounded' : ''
+  }`}
+>
+  Categories
+</span>
+
     </button>
-    {isCategoriesOpen && (
+    {/* {isCategoriesOpen && (
       <div className="absolute top-full mt-2 w-48 bg-white border rounded shadow-md">
         {categories.map((cat, i) => (
           <div
             key={i}
-            className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 hover:bg-gray-100 cursor-pointer dark:bg-darkBg dark:text-darkText"
           >
             {cat}
           </div>
         ))}
       </div>
-    )}
-  </div>
+    )} */}
+    </div>
+    {isCategoriesOpen && (
+       <CategoryDropdown />
+//   <div
+//   className="absolute top-full mt-2 w-screen p-6 bg-white shadow-md 
+//   grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-10 
+//   gap-4 rounded-br-xl rounded-bl-xl z-50 
+//   dark:bg-darkBg dark:text-darkText"
+// >
+ 
+// </div>
+
+
+)}
+  {/* </div> */}
 
   {/* Links (hidden on mobile, visible md+) */}
-  <ul className="hidden md:flex gap-5">
-    {navLinks.map((link, i) => (
-      <li key={i}>
-        <NavLink
-          to={link.path}
-          className={({ isActive }) =>
-            isActive
-              ? "border-b-2 border-color1 text-color1"
-              : "text-slate-600 hover:text-color1"
-          }
-        >
-          {link.name}
-        </NavLink>
-      </li>
-    ))}
-  </ul>
+  {/* Links */}
+<ul
+  className="hidden dark:text-darkText dark:bg-darkcard  md:inline-flex justify-start items-center gap-2.5 lg:gap-3 xl:gap-5 2xl:gap-6 grow overflow-x-auto"
+  // className="
+  //   hidden md:flex gap-5 sm:px-4 space-x-4
+  //   md:space-x-6
+  //   overflow-x-auto  scrollbar-track-transparent
+  // "
+>
+  {navLinks.map((link, i) => (
+    <li key={i} className="flex items-center gap-2 flex-shrink-0">
+      <NavLink
+        to={link.path}
+        className={({ isActive }) =>
+          isActive
+            ? "border-b-2 border-color1 text-color1 whitespace-nowrap"
+            : "text-slate-600 hover:text-color1 whitespace-nowrap dark:text-darkText dark:bg-darkcard "
+        }
+      >
+        {link.name}
+      </NavLink>
+
+      {/* Divider */}
+      {i !== navLinks.length - 1 && (
+        <span className="w-[1px] h-4 border border-slate-200"></span>
+      )}
+    </li>
+  ))}
+</ul>
+
 
   {/* App Download */}
   <div className="relative">
 <button
   onClick={() => setIsAppOpen(!isAppOpen)}
-  className={`flex items-center gap-2 cursor-pointer transition-colors py-3 px-2 ${
-    isAppOpen ? "text-red-500 bg-[#fbd5df] rounded-lg " : "text-slate-700"
+  className={`flex items-center gap-2 cursor-pointer transition-colors py-3 px-2  ${
+    isAppOpen ? "text-red-500 bg-[#fbd5df] rounded-lg " : "text-slate-700 dark:text-darkText dark:bg-darkcard"
   }`}
 >
   <Phone className={`w-5 h-5 ${isAppOpen ? "text-red-500" : ""}`} />
@@ -374,7 +431,19 @@ const handleLogout = () => {
 
 
       {/* Login Modal */}
-      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)}   onSwitchToRegister={() => {
+          setIsLoginOpen(false);
+          setIsRegisterOpen(true);
+        }}/>
+        {/* Registration Modal */}
+      <RegistrationModal
+        isOpen={isRegisterOpen}
+        onClose={() => setIsRegisterOpen(false)}
+        onSwitchToLogin={() => {
+          setIsRegisterOpen(false);
+          setIsLoginOpen(true);
+        }}
+      />
     </header>
   );
 };

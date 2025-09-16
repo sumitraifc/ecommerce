@@ -39,7 +39,7 @@ const AllProductsPage = () => {
   return (
     <div className="relative py-12 ">
                 {/* Header */}
-            <div className=" px-[2rem] sm:px-[3rem] md:px-[2rem] bg-gray-200 py-4 dark:bg-darkcard dark:text-darkText">
+            <div className=" px-[2rem] sm:px-[4rem] md:px-[2rem] lg:px-[4rem] bg-gray-200 py-4 dark:bg-darkcard dark:text-darkText">
             {/* Left side: Back + Title */}
             <div className="bg-white flex justify-between items-center   p-4 rounded-xl shadow-sm dark:bg-darkBg dark:text-darkText">
 
@@ -69,7 +69,7 @@ const AllProductsPage = () => {
 
 
       {/* Product Grid */}
-      <div className="grid grid-cols-2 xs:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[1rem] pt-8">
+      <div className="grid grid-cols-2 xs:px-[4rem]  sm:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-4 px-[2rem] pt-8">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}

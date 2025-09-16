@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Eye, Calendar, Package, Truck, CheckCircle, XCircle, Clock } from 'lucide-react';
+import { NavLink } from 'react-router-dom';
 
 const OrderHistory = () => {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -238,7 +239,10 @@ const OrderHistory = () => {
       <div className="lg:flex-none">
         <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors w-full lg:w-auto justify-center">
           <Eye className="w-4 h-4 mr-1" />
-          View Details
+          
+          <NavLink to="/orderdetail">
+            View Details
+          </NavLink>
         </button>
       </div>
     </div>

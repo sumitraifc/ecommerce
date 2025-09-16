@@ -22,7 +22,7 @@ const categories = [
 
 const CategoriesPage = () => {
   return (
-    <div className="py-8 mt-4 px-[4rem]">
+    <div className="py-14 mt-4 px-[4rem]">
       <h1 className="text-3xl font-bold mb-6">All Categories</h1>
       <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 gap-3 sm:gap-6 items-start mt-6">
         {categories.map((cat, i) => (

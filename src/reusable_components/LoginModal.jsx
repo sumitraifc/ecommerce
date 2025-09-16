@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import RegistrationModal from "./RegistrationModal";
 
-const LoginModal = ({ isOpen, onClose }) => {
+const LoginModal = ({ isOpen, onClose,onSwitchToRegister }) => {
   const [showPassword, setShowPassword] = useState(false);
  const [isModalOpen, setIsModalOpen] = useState(false);
   if (!isOpen) return null;
@@ -79,7 +79,8 @@ const LoginModal = ({ isOpen, onClose }) => {
           Don’t have an account?{" "}
            <button
         className="text-color3 hover:underline font-bold"
-        onClick={() => setIsModalOpen(true)}
+        // onClick={() => setIsModalOpen(true)}
+         onClick={onSwitchToRegister}
       >
         Sign Up
       </button>

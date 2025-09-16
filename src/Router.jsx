@@ -18,6 +18,9 @@ import TermsOfService from "./pages/Dashboard/TermsOfService";
 import PrivacyPolicy from "./pages/Dashboard/PrivacyPolicy";
 import ReturnOrders from "./pages/Dashboard/ReturnOrders";
 import ManageAddress from "./pages/Dashboard/ManageAddress";
+import AboutUs from "./pages/Dashboard/AboutUs";
+import ReturnRefundPolicy from "./pages/Dashboard/ReturnRefundPolicy";
+import OrderDetail from "./reusable_components/OrderDetail";
 
 export const Router = createBrowserRouter([
     {
@@ -96,6 +99,18 @@ export const Router = createBrowserRouter([
                 path: "/manageaddress",
                 element: <ManageAddress />
             },
+            {
+                path: "/aboutus",
+                element: <AboutUs />
+            },
+            {
+                path: "/returnrefundpolicy",
+                element: <ReturnRefundPolicy />
+            },
+            {
+                path: "/orderdetail",
+                element: <OrderDetail />
+            },
             // {
             //     path: "/profile",
             //     element:<ProtectedRoutes> <Profile /></ProtectedRoutes>
@@ -124,9 +139,6 @@ export const Router = createBrowserRouter([
             //     path: "/corporateForm",
             //     element: <CorporateContactForm />
             // },
-            // {
-            //     path: "/aboutus",
-            //     element: <AboutUs />
             // },
             // {
             //     path: "/career",

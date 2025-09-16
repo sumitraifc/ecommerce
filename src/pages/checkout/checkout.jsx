@@ -8,6 +8,7 @@ import {
   ChevronDown,
 } from "lucide-react";
 import SavedAddressModal from "./SavedAddressModal";
+import OrderPlaced from "../../reusable_components/OrderPlaced";
 
 export default function Checkout() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,6 +22,7 @@ export default function Checkout() {
   const [orderNote, setOrderNote] = useState("");
   const [isPlacingOrder, setIsPlacingOrder] = useState(false);
 
+  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
   const shippingAddress = {
     name: "hurhmk",
     phone: "1082769418",
@@ -62,8 +64,8 @@ export default function Checkout() {
     setIsPlacingOrder(true);
     setTimeout(() => {
       setIsPlacingOrder(false);
-      alert("Order placed successfully!");
-    }, 2000);
+      setIsOrderPlaced(true);
+    }, 10000);
   };
 
   return (
@@ -209,7 +211,7 @@ export default function Checkout() {
 
           {/* Right Column */}
           <div className="block lg:block">
-            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-6 sticky top-4">
+            <div className="bg-white dark:bg-darkcard dark:text-darkText rounded-lg shadow-sm border dark:border-gray-700 p-6  top-4">
               {/* Order Summary */}
               <h2 className="text-lg font-semibold mb-4">Order Summary</h2>
               <div className="space-y-3 mb-4">
@@ -295,7 +297,7 @@ export default function Checkout() {
                     <button
                       onClick={handleApplyCoupon}
                       disabled={!couponCode.trim()}
-                      className="px-4 py-2 bg-black dark:bg-gray-700 text-white rounded-r-lg hover:bg-gray-800 disabled:opacity-50"
+                      className="px-4 py-2 bg-color3 dark:bg-gray-700 text-white rounded-r-lg hover:bg-color2 "
                     >
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -311,6 +313,11 @@ export default function Checkout() {
               >
                 {isPlacingOrder ? "Placing Order..." : "Place Order"}
               </button>
+              {/* ✅ OrderPlaced Modal */}
+      <OrderPlaced
+        isOpen={isOrderPlaced}
+        onClose={() => setIsOrderPlaced(false)}
+      />
             </div>
           </div>
         </div>

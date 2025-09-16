@@ -12,6 +12,7 @@ import item10 from "../assets/10.png";
 import item11 from "../assets/11.png";
 import item12 from "../assets/12.png";
 import item13 from "../assets/13.png";
+import { NavLink } from "react-router-dom";
 
 const products = [
   {
@@ -84,7 +85,13 @@ const ProductSection = () => {
           Popular Products
         </h2>
         <button className="text-sm text-gray-800 dark:bg-darkBg dark:text-darkText hover:">
-          View All
+          
+          <NavLink
+    to="/PopulerProducts"
+    
+  >
+    View All
+  </NavLink>
         </button>
       </div>
 

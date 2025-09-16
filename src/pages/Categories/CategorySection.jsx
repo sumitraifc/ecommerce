@@ -71,7 +71,7 @@ const CategorySection = () => {
       >
         {categories.map((cat, index) => (
           <SwiperSlide key={index}>
-            <div className="p-3 bg-white rounded-2xl border border-slate-100 hover:border-color3 transition duration-300 group cursor-pointer flex flex-col items-center">
+            <div className="p-3 bg-white rounded-2xl   border border-slate-100 hover:border-color3 transition duration-300 group cursor-pointer flex flex-col items-center">
               <img
                 src={cat.img}
                 alt={cat.name}

@@ -48,7 +48,7 @@ const PopulerProductsPage = () => {
 
       {/* Product Grid */}
       {/* <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[4rem] pt-8"> */}
-      <div className="grid grid-cols-2 xs:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 px-[1rem] pt-8">
+      <div className="grid grid-cols-2 xs:px-[4rem] sm:px-[4rem] xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-4 px-[1rem] pt-8">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}

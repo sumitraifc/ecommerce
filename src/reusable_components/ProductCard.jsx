@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
     <div className=" dark:bg-darkcard dark:text-darkText group border border-gray-200 rounded-xl shadow-sm hover:border-color3 transition-all p-1 flex flex-col justify-between relative bg-white">
       {/* Discount Badge */}
       {product.discount && (
-        <span className="absolute z-10 top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+        <span className="absolute z- top-3 left-3 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
           {product.discount}% OFF
         </span>
       )}
@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full p-1 object-contain transition-transform duration-300 group-hover:scale-105"
         />
       </div>
 

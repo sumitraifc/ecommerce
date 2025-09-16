@@ -11,6 +11,7 @@ import {
 import appStore from "/appStoreFooter.png";
 import playStore from "/playStoreFooter.png";
 import logo from "/logoWhite.png";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -18,11 +19,11 @@ const Footer = () => {
       {/* 🔹 Top Section */}
       <div
         className="
-          max-w-7xl mx-auto 
-          px-4 sm:px-6 lg:px-12 
+          max-w-8xl mx-auto 
+          px-[2rem] sm:px-[4rem] lg:px-12 
           py-10 
           grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 
-          gap-8
+          gap-6
         "
       >
         {/* Brand Info */}
@@ -43,11 +44,57 @@ const Footer = () => {
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:underline cursor-pointer">Products</li>
-            <li className="hover:underline cursor-pointer">Most Popular</li>
-            <li className="hover:underline cursor-pointer">Best Deal</li>
-            <li className="hover:underline cursor-pointer">Blogs</li>
-            <li className="hover:underline cursor-pointer">Become a Seller</li>
+            {/* <li className="hover:text-color3 cursor-pointer">Products</li>
+            <li className="hover:text-color3 cursor-pointer">Most Popular</li>
+            <li className="hover:text-color3 cursor-pointer">Best Deal</li>
+            <li className="hover:text-color3 cursor-pointer">Blogs</li>
+            <li className="hover:text-color3 cursor-pointer">Become a Seller</li> */}
+            <li>
+  <NavLink
+    to="/allproducts"
+    className="hover:text-color3 cursor-pointer"
+  >
+    Products
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/PopulerProducts"
+    className="hover:text-color3 cursor-pointer"
+  >
+    Most Popular
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/bestdeals"
+    className="hover:text-color3 cursor-pointer"
+  >
+    Best Deal
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/contactus"
+    className="hover:text-color3 cursor-pointer"
+  >
+    Contact Us
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+
+    to="/blogs"
+    className="hover:text-color3 cursor-pointer"
+  >
+    Blogs
+  </NavLink>
+</li>
+
           </ul>
         </div>
 
@@ -55,11 +102,35 @@ const Footer = () => {
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-3">Company</h3>
           <ul className="space-y-2 text-sm">
-            <li className="hover:underline cursor-pointer">About us</li>
-            <li className="hover:underline cursor-pointer">Contact</li>
-            <li className="hover:underline cursor-pointer">Terms & Conditions</li>
-            <li className="hover:underline cursor-pointer">Privacy Policy</li>
-            <li className="hover:underline cursor-pointer">Return & Refund Policy</li>
+            <li className="hover:text-color3 cursor-pointer">
+                <NavLink
+
+    to="/aboutus"
+    className="hover:text-color3 cursor-pointer"
+  >
+    About Us 
+  </NavLink>
+            </li>
+            <li className="hover:text-color3 cursor-pointer">
+              <NavLink to="/contactus"className="hover:text-color3 cursor-pointer">
+                Contact
+              </NavLink>
+            </li>
+            <li className="hover:text-color3 cursor-pointer">
+               <NavLink to="/termsservice"className="hover:text-color3 cursor-pointer">
+                Terms & Conditions
+              </NavLink>
+            </li>
+            <li className="hover:text-color3 cursor-pointer">
+              <NavLink to="/privacypolicy"className="hover:text-color3 cursor-pointer">
+                Privacy Policy
+              </NavLink>
+            </li>
+            <li className="hover:text-color3 cursor-pointer">
+              <NavLink to="/returnrefundpolicy" className="hover:text-color3 cursor-pointer">
+                Return & Refund Policy
+              </NavLink>
+            </li>
           </ul>
         </div>
 
@@ -67,8 +138,8 @@ const Footer = () => {
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-3">Download our app</h3>
           <div className="flex flex-col sm:flex-row gap-3 mb-4">
-            <img src={appStore} alt="App Store" className="w-32 cursor-pointer" />
-            <img src={playStore} alt="Google Play" className="w-32 cursor-pointer" />
+            <img src={appStore} alt="App Store" className="w-[7.5rem] cursor-pointer" />
+            <img src={playStore} alt="Google Play" className="w-[7.5rem] cursor-pointer" />
           </div>
           <div className="flex gap-4 justify-start text-xl">
             <FaFacebook size={22} className="cursor-pointer hover:text-blue-500 text-blue-600" />
